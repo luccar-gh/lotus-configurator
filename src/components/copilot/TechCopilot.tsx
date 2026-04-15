@@ -47,9 +47,10 @@ export function TechCopilot() {
     }
   }, [isOpen]);
 
-  // Lock body scroll on mobile when panel is open
+  // Lock body scroll only on mobile when panel is open
   useEffect(() => {
-    if (isOpen) {
+    const isMobile = window.innerWidth < 640;
+    if (isOpen && isMobile) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
