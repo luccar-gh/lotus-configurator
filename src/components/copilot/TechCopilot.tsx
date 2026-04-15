@@ -110,7 +110,7 @@ export function TechCopilot() {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ duration: 0.3, ease: FLOAT }}
-            className="fixed top-0 right-0 bottom-0 w-[360px] bg-white border-l border-border z-40 flex flex-col"
+            className="fixed top-0 right-0 bottom-0 w-full sm:w-[360px] bg-white border-l border-border z-40 flex flex-col"
           >
             {/* Header */}
             <div className="p-2x border-b border-border flex items-center justify-between">

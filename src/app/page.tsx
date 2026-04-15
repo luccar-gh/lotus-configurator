@@ -43,15 +43,15 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
       {/* ── TOP BAR ── */}
-      <header className="flex items-center justify-between px-3x py-2x border-b border-border">
-        <div className="flex items-center gap-3x">
-          <span className="font-mono font-medium text-[14px] tracking-technical text-silicon">
+      <header className="flex items-center justify-between px-3x py-2x border-b border-border min-w-0">
+        <div className="flex items-center gap-2x min-w-0 overflow-hidden">
+          <span className="font-mono font-medium text-[14px] tracking-technical text-silicon whitespace-nowrap">
             LOTUS MICROSYSTEMS
           </span>
-          <span className="text-border select-none">|</span>
-          <TechnicalLabel>POWER ARCHITECT</TechnicalLabel>
+          <span className="text-border select-none hidden sm:inline">|</span>
+          <TechnicalLabel className="hidden sm:block">POWER ARCHITECT</TechnicalLabel>
         </div>
-        <div className="flex items-center gap-2x">
+        <div className="flex items-center gap-2x flex-shrink-0">
           <ExportButton config={config} comparison={comparison} />
           <ThemeToggle />
           <TechnicalLabel className="text-orange">v1.0</TechnicalLabel>
@@ -212,7 +212,7 @@ export default function Home() {
         {/* RIGHT PANEL — VISUALIZATION (9 cols) */}
         <Section className="col-span-9 flex flex-col">
           {/* Viz header */}
-          <div className="flex items-center justify-between px-3x py-2x border-b border-border">
+          <div className="flex flex-wrap items-center justify-between gap-1x px-3x py-2x border-b border-border">
             <div>
               <TechnicalLabel>PCB FOOTPRINT COMPARISON</TechnicalLabel>
               <span className="font-mono text-[9px] ml-2x opacity-50" style={{ color: "var(--silicon-grey)" }}>
@@ -245,14 +245,14 @@ export default function Home() {
           </div>
 
           {/* Legend */}
-          <div className="flex items-center justify-between px-3x py-1x border-t border-border">
-            <div className="flex gap-4x">
+          <div className="flex flex-wrap items-center justify-between gap-1x px-3x py-1x border-t border-border">
+            <div className="flex flex-wrap gap-2x">
               <div className="flex items-center gap-1x">
-                <div className="w-[10px] h-[10px]" style={{ background: "#555555" }} />
+                <div className="w-[10px] h-[10px] flex-shrink-0" style={{ background: "#555555" }} />
                 <TechnicalLabel>{STANDARD_SPEC.name} ({comparison.standard.componentCount} parts)</TechnicalLabel>
               </div>
               <div className="flex items-center gap-1x">
-                <div className="w-[10px] h-[10px] bg-orange" />
+                <div className="w-[10px] h-[10px] flex-shrink-0 bg-orange" />
                 <TechnicalLabel>{LOTUS_SPEC.name} ({comparison.lotus.componentCount} module{comparison.lotus.componentCount > 1 ? "s" : ""})</TechnicalLabel>
               </div>
             </div>
@@ -275,9 +275,9 @@ export default function Home() {
       </main>
 
       {/* ── BOTTOM STATUS BAR ── */}
-      <footer className="flex items-center justify-between px-3x py-1x border-t border-border bg-linen">
-        <TechnicalLabel>SILICON-ON-INSULATOR TECHNOLOGY</TechnicalLabel>
-        <div className="flex gap-4x">
+      <footer className="flex flex-wrap items-center justify-between gap-1x px-3x py-1x border-t border-border bg-linen">
+        <TechnicalLabel className="hidden sm:block">SILICON-ON-INSULATOR TECHNOLOGY</TechnicalLabel>
+        <div className="flex flex-wrap gap-2x">
           <TechnicalLabel>
             VIN: <span className="font-mono">{inputVoltage.toFixed(1)}V</span>
           </TechnicalLabel>
