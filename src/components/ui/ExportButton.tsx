@@ -193,13 +193,13 @@ export function ExportButton({ config, comparison }: ExportButtonProps) {
   return (
     <button
       onClick={handleExport}
-      className="flex items-center gap-[6px] px-2x py-[6px] border text-[10px] font-mono tracking-technical uppercase transition-colors border-border hover:border-silicon"
+      className="flex items-center gap-[6px] px-2x py-[6px] border text-[10px] font-mono tracking-technical uppercase transition-colors border-border hover:border-silicon flex-shrink-0"
       style={{ color: "var(--silicon-grey)" }}
     >
       <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="0.8">
         <path d="M2 8v2h8V8M6 1v7M3 5l3 3 3-3" />
       </svg>
-      EXPORT PDF
+      <span className="hidden sm:inline">EXPORT PDF</span>
     </button>
   );
 }

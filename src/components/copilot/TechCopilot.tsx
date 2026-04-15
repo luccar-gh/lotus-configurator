@@ -90,11 +90,11 @@ export function TechCopilot() {
 
   return (
     <>
-      {/* Toggle button */}
+      {/* Toggle button — hidden while panel is open */}
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={`fixed bottom-3x right-3x z-50 w-[48px] h-[48px] flex items-center justify-center border transition-colors ${
-          isOpen ? "bg-orange text-static-white border-orange" : "bg-silicon text-white border-silicon"
+          isOpen ? "hidden" : "bg-silicon text-white border-silicon"
         }`}
       >
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1">
@@ -173,7 +173,7 @@ export function TechCopilot() {
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && handleSubmit(input)}
                 placeholder="Query specs..."
-                className="flex-1 bg-linen px-2x py-1x font-mono text-[12px] text-silicon border border-border focus:border-orange focus:outline-none placeholder:text-border"
+                className="flex-1 bg-linen px-2x py-1x font-mono text-[16px] sm:text-[12px] text-silicon border border-border focus:border-orange focus:outline-none placeholder:text-border"
               />
               <button
                 onClick={() => handleSubmit(input)}

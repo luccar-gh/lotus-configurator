@@ -54,7 +54,7 @@ export default function Home() {
         <div className="flex items-center gap-2x flex-shrink-0">
           <ExportButton config={config} comparison={comparison} />
           <ThemeToggle />
-          <TechnicalLabel className="text-orange">v1.0</TechnicalLabel>
+          <TechnicalLabel className="text-orange hidden sm:block">v1.0</TechnicalLabel>
         </div>
       </header>
 
